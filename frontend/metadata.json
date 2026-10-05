@@ -1,0 +1,6 @@
+{
+  "name": "Foner — Luxury Beige & Burgundy Atelier Store",
+  "description": "Foner is a responsive luxury fashion and lifestyle e-commerce store crafted in a signature Beige & Burgundy aesthetic, featuring a full PostgreSQL auto-schema backend, separate dynamic desktop and mobile banners, PKR checkout with fixed Rs. 300 delivery, and an advanced role-based Admin Panel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
