@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig(() => {
   return {
-    root: '.',
+    root: __dirname,
     publicDir: path.resolve(__dirname, 'public'),
     build: {
       outDir: path.resolve(__dirname, 'dist'),

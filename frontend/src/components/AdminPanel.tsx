@@ -4058,7 +4058,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                           key={idx}
                           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#F7F3EB] border border-[#631828]/15 text-xs"
                         >
-                          <img src={item.image_url} alt="" className="w-6 h-7 object-cover rounded" />
+                          <img src={resolveImageUrl(item.image_url)} alt="" className="w-6 h-7 object-cover rounded" />
                           <span className="font-medium text-[#1F181A]">
                             {item.quantity}x {item.title} ({item.selected_size})
                           </span>
@@ -6656,7 +6656,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                         >
                           <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-[#1F181A]">
                             <img
-                              src={imgUrl}
+                              src={resolveImageUrl(imgUrl)}
                               alt={`Product ${idx + 1}`}
                               className="w-full h-full object-cover"
                             />

@@ -135,7 +135,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
         rawList.push(extra);
       }
     }
-    return rawList;
+    return rawList.map((u) => resolveImageUrl(u));
   }, [product]);
 
   const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
@@ -463,7 +463,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                      src={allImages[activeImageIndex]}
+                      src={resolveImageUrl(allImages[activeImageIndex])}
                       alt={`${product.title} — Image ${activeImageIndex + 1}`}
                       onClick={() => {
                         setLightboxZoom(1);
@@ -556,7 +556,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                         }`}
                       >
                         <img
-                          src={imgUrl}
+                          src={resolveImageUrl(imgUrl)}
                           alt={`${product.title} thumbnail ${idx + 1}`}
                           className="w-full h-full object-cover"
                         />
@@ -593,7 +593,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                       }`}
                     >
                       <img
-                        src={imgUrl}
+                        src={resolveImageUrl(imgUrl)}
                         alt={`${product.title} — View ${idx + 1}`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
@@ -1488,7 +1488,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
 
               <div className="overflow-auto max-h-[72vh] max-w-[90vw] flex items-center justify-center rounded-2xl">
                 <img
-                  src={allImages[activeImageIndex]}
+                  src={resolveImageUrl(allImages[activeImageIndex])}
                   alt={product.title}
                   onClick={() => setLightboxZoom((z) => (z >= 2.5 ? 1 : Number((z + 0.75).toFixed(2))))}
                   style={{ transform: `scale(${lightboxZoom})` }}
@@ -1521,7 +1521,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                       : 'border-transparent opacity-55 hover:opacity-90'
                   }`}
                 >
-                  <img src={img} alt="" className="w-full h-full object-cover" />
+                  <img src={resolveImageUrl(img)} alt="" className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>

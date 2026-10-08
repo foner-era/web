@@ -80,7 +80,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
       setSelectedSize(product.sizes?.[0] || 'M');
       setSelectedColor(product.colors?.[0]?.name || 'Standard');
       setQuantity(1);
-      setActiveImage(product.image_url);
+      setActiveImage(resolveImageUrl(product.image_url));
       setSizeGuideOpen(false);
       setNotifySuccess(false);
     }
@@ -97,7 +97,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
 
   if (!product) return null;
 
-  const allImages = Array.from(new Set([product.image_url, ...(product.gallery_urls || [])]));
+  const allImages = Array.from(new Set([product.image_url, ...(product.gallery_urls || [])].filter(Boolean))).map((img) => resolveImageUrl(img));
   const productReviews = reviews.filter((r) => r.product_id === product.id);
   const compareAt =
     product.compare_at_price_pkr && product.compare_at_price_pkr > product.price_pkr
@@ -165,7 +165,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.25 }}
-                  src={activeImage || product.image_url}
+                  src={resolveImageUrl(activeImage || product.image_url)}
                   alt={product.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -197,7 +197,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                         : 'border-transparent opacity-70 hover:opacity-100'
                     }`}
                   >
-                    <img src={img} alt="" className="w-full h-full object-cover" />
+                    <img src={resolveImageUrl(img)} alt="" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>

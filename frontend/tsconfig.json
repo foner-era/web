@@ -18,6 +18,7 @@
     "jsx": "react-jsx",
     "paths": {
       "@/*": [
+        "./src/*",
         "./frontend/src/*",
         "./*"
       ]
@@ -26,9 +27,7 @@
     "noEmit": true
   },
   "include": [
-    "server.ts",
-    "backend/**/*.ts",
-    "frontend/**/*.ts",
-    "frontend/**/*.tsx"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ]
 }

@@ -19,6 +19,7 @@ import {
   Facebook,
 } from 'lucide-react';
 import { WhatsAppIcon, getEffectiveBusinessContact } from './utils/contact';
+import { resolveImageUrl } from './utils/imageUrl';
 import {
   AuditLog,
   Banner,
@@ -1408,7 +1409,7 @@ export function App() {
             {/* Product Image */}
             <div className="relative aspect-[4/5] overflow-hidden bg-[#E5DCCB]">
               <img
-                src={product.image_url}
+                src={resolveImageUrl(product.image_url)}
                 alt={product.title}
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
@@ -1810,7 +1811,7 @@ export function App() {
                             className="lg:col-span-5 relative aspect-[16/10] rounded-2xl overflow-hidden bg-[#1F181A] cursor-pointer group foner-card-lift"
                           >
                             <img
-                              src={cat.image_url}
+                              src={resolveImageUrl(cat.image_url)}
                               alt={cat.name}
                               className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                             />
@@ -1859,7 +1860,7 @@ export function App() {
                                       >
                                         <div className="w-14 h-16 rounded-xl overflow-hidden shrink-0 border border-[#631828]/15">
                                           <img
-                                            src={sub.image_url}
+                                            src={resolveImageUrl(sub.image_url)}
                                             alt={sub.name}
                                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                           />
@@ -2329,7 +2330,7 @@ export function App() {
                       className="group foner-card-lift w-full relative aspect-[4/5] rounded-2xl overflow-hidden border border-[#631828]/20 text-left transition-all hover:shadow-xl block"
                     >
                       <img
-                        src={cat.image_url}
+                        src={resolveImageUrl(cat.image_url)}
                         alt={cat.name}
                         className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
@@ -2366,7 +2367,7 @@ export function App() {
                       >
                         <div className="aspect-square w-full rounded-xl overflow-hidden bg-[#E5DCCB] mb-2.5">
                           <img
-                            src={sub.image_url}
+                            src={resolveImageUrl(sub.image_url)}
                             alt={sub.name}
                             className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                           />
@@ -2891,7 +2892,7 @@ export function App() {
               >
                 <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-[#EFE9DC] border border-[#631828]/15">
                   <img
-                    src={notifyModalProduct.image_url}
+                    src={resolveImageUrl(notifyModalProduct.image_url)}
                     alt={notifyModalProduct.title}
                     className="w-14 h-16 rounded-xl object-cover shrink-0"
                   />
@@ -3043,7 +3044,7 @@ export function App() {
                     >
                       <div className="flex items-center gap-3.5 min-w-0">
                         <img
-                          src={item.image_url}
+                          src={resolveImageUrl(item.image_url)}
                           alt={item.title}
                           className="w-16 h-20 rounded-xl object-cover shrink-0"
                         />

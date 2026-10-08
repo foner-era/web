@@ -28,6 +28,7 @@ import {
   User,
 } from '../types';
 import { getEffectiveBusinessContact } from '../utils/contact';
+import { resolveImageUrl } from '../utils/imageUrl';
 import { apiFetch } from '../api';
 import { ScrollReveal } from './AnimationSystem';
 
@@ -260,7 +261,7 @@ export const FooterDedicatedPages: React.FC<DedicatedPageProps> = ({
                   <div className="flex items-center gap-2.5 min-w-0">
                     {item.image_url && (
                       <img
-                        src={item.image_url}
+                        src={resolveImageUrl(item.image_url)}
                         alt={item.title}
                         className="w-10 h-12 rounded-lg object-cover shrink-0"
                       />
